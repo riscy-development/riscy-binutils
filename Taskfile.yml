@@ -4,13 +4,19 @@ tasks:
   build:
     dir: './build'
     cmds:
-      - cmake ..
+      - cmake .. -G Ninja
       - cmake --build .
 
   test:
     dir: './build'
     cmds:
-      - cmake ..
+      - cmake .. -G Ninja
       - cmake --build .
       - ./AssemblerTests
+
+  clean:
+    dir: './'
+    cmds:
+      - rm -rf build
+
         
