@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  build:
+    dir: './build'
+    cmds:
+      - cmake ..
+      - cmake --build .
+
+  test:
+    dir: './build'
+    cmds:
+      - cmake ..
+      - cmake --build .
+      - ./AssemblerTests
+        
