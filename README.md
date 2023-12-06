@@ -1,4 +1,4 @@
-# RISCY ASSEMBLER
+# RISCY Binutils
 
-i love luts
-
+## Implements:
+- (WIP) RISC-V Assembler
