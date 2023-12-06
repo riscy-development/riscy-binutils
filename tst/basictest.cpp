@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <bitset>
+#include <filesystem>
 
 TEST(BasicTests, SanityTest) {
     EXPECT_EQ(4, 4);
@@ -32,4 +33,11 @@ TEST(BasicTests, BitSetLongTest) {
     EXPECT_EQ(y.to_ulong(), 0b11111111111111111111111111111111);
     EXPECT_NE(v.to_ulong(), 4294967296);
     EXPECT_NE(v.to_ulong(), 0b100000000000000000000000000000000);
+}
+
+TEST(BasicTests, PathExistsTest) {
+    EXPECT_TRUE(std::filesystem::exists("build.ninja"));
+    EXPECT_TRUE(std::filesystem::exists("../README.md"));
+    EXPECT_FALSE(std::filesystem::exists("README.md"));
+    EXPECT_TRUE(std::filesystem::exists("../tst/basictest.cpp"));
 }
